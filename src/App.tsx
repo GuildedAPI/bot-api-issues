@@ -95,14 +95,14 @@ const Issues: React.FC<{ issues: Issue[] }> = ({ issues }) => {
     <ul>
       {issues.map((issue, index) => (
         <>
-          <li key={`issue-${index}/${issues.length}`}>
+          <li key={`issue-${index}/${issues.length}`} className='flex'>
             <input
               type='checkbox'
               defaultChecked={issue.isComplete}
               className='mr-2'
               disabled
             />
-            {issue.description}
+            <Markdown>{issue.description}</Markdown>
           </li>
           {issue.issues && (
             <div className='ml-6'>
