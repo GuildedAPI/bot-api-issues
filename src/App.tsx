@@ -1,7 +1,7 @@
 import React from 'react';
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
 import { Link } from './components/Link';
-import { Data } from './types/data';
+import { Data, Issue } from './types/data';
 
 const queryClient = new QueryClient();
 
@@ -40,7 +40,61 @@ const Index: React.FC = () => {
           </Link>
         </p>
       </div>
-      {isLoading || !data ? 'Loading...' : <div></div>}
+      {isLoading || !data ? (
+        'Loading...'
+      ) : (
+        <div className='space-y-2'>
+          {data.sections.map((section) => (
+            <details
+              key={section.title}
+              id={section.title.toLowerCase().replace(/ /g, '-')}
+              className='rounded-lg bg-guilded-slate py-4 px-6'
+              open
+            >
+              <summary className='font-bold text-lg cursor-pointer'>
+                {section.title}
+              </summary>
+              <p className='text-guilded-subtitle'>{section.description}</p>
+              {Object.entries(section.items).map(([tag, items]) => (
+                <div key={tag} className='mt-2'>
+                  {items.map((item) => {
+                    const url = `https://www.guilded.gg/docs/api/${tag}/${item.operationId}`;
+                    return (
+                      <div key={item.operationId} id={item.operationId}>
+                        <h1 className='font-bold text-2xl flex'>
+                          <Link href={url}>{item.operationSummary}</Link>
+                          <a href={`#${item.operationId}`} className='ml-2'>
+                            Link
+                          </a>
+                        </h1>
+                        <Issues issues={item.issues} />
+                      </div>
+                    );
+                  })}
+                </div>
+              ))}
+            </details>
+          ))}
+        </div>
+      )}
     </div>
+  );
+};
+
+const Issues: React.FC<{ issues: Issue[] }> = ({ issues }) => {
+  return (
+    <ul>
+      {issues.map((issue, index) => (
+        <li key={`issue-${index}/${issues.length}`}>
+          <input
+            type='checkbox'
+            defaultChecked={issue.isComplete}
+            className='mr-2'
+            disabled
+          />
+          {issue.description}
+        </li>
+      ))}
+    </ul>
   );
 };

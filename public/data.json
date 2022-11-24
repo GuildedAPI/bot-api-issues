@@ -2,13 +2,25 @@
   "sections": [
     {
       "title": "Issues",
-      "description": "",
-      "items": []
+      "description": "This is not for features that the API is missing/should have, but actual issues. For feature requests, see [Feature Requests](#feature-requests).",
+      "items": {
+        "chat": [
+          {
+            "operationSummary": "Create channel message",
+            "operationId": "ChannelMessageCreate",
+            "issues": [
+              {
+                "description": "Sometimes raises a 500 if you pass certain markdown strings to `content`"
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "title": "Feature Requests",
       "description": "",
-      "items": []
+      "items": {}
     }
   ]
 }
