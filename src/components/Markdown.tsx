@@ -7,6 +7,9 @@ export const Markdown: React.FC<{children: string}> = ({children}) => {
   return <ReactMarkdown components={{
     a(props) {
       return <Link {...props}/>;
+    },
+    code(props) {
+      return <code {...props} className='rounded px-1 bg-guilded-black/40'/>;
     }
   }} remarkPlugins={[remarkGfm]}>{children}</ReactMarkdown>;
 };
