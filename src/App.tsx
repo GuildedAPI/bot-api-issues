@@ -55,7 +55,9 @@ const Index: React.FC = () => {
               <summary className='font-bold text-lg cursor-pointer'>
                 {section.title}
               </summary>
-              <p className='text-guilded-subtitle'><Markdown>{section.description}</Markdown></p>
+              <p className='text-guilded-subtitle'>
+                <Markdown>{section.description}</Markdown>
+              </p>
               {Object.entries(section.items).map(([tag, items]) => (
                 <div key={tag} className='mt-2'>
                   {items.map((item) => {
@@ -103,6 +105,15 @@ const Issues: React.FC<{ issues: Issue[] }> = ({ issues }) => {
               disabled
             />
             <Markdown>{issue.description}</Markdown>
+            {issue.references &&
+              issue.references.map((reference, refIndex) => (
+                <sup
+                  className='mt-3 ml-1'
+                  key={`reference-${reference.url}-${refIndex}`}
+                >
+                  <Link href={reference.url}>{refIndex + 1}</Link>
+                </sup>
+              ))}
           </li>
           {issue.issues && (
             <div className='ml-6'>

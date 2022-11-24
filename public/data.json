@@ -12,17 +12,93 @@
               {
                 "description": "Sometimes raises a 500 if you pass certain markdown strings to `content`",
                 "issues": [
-                  { "description": "`***`" },
+                  {
+                    "description": "`***`",
+                    "references": [
+                      {
+                        "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/42ce6b45-fdae-4b47-ba2e-684166c3aae2/chat?messageId=272c6b5c-740a-4487-bd73-54e07132c1c3"
+                      }
+                    ]
+                  },
                   { "description": "Codeblocks" },
-                  { "description": "`[object Object]`" },
-                  { "description": "Numbered lists" },
+                  {
+                    "description": "`[object Object]`",
+                    "references": [
+                      {
+                        "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/464fcf0d-c4dd-44b1-a395-db368c44c1fa/chat?messageId=fece6c22-0186-4860-a362-70d932f49765"
+                      }
+                    ]
+                  },
+                  {
+                    "description": "Numbered lists",
+                    "references": [
+                      {
+                        "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/173538d1-9a94-4805-9305-a5cc90dea7d8/chat?messageId=f373435a-0afb-4268-aedd-6622fe665037"
+                      }
+                    ]
+                  },
                   { "description": "Bullet lists" },
-                  { "description": "URLs when prefixed with `\\n`" },
+                  {
+                    "description": "URLs when prefixed with `\\n`",
+                    "references": [
+                      {
+                        "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/be165039-4c82-4c01-b2d7-1e8bc7684519/chat?messageId=47fa9ff6-bbd4-433e-8405-984f2bff387c"
+                      }
+                    ]
+                  },
                   { "description": "`***`" }
                 ]
               },
               {
-                "description": "Backslashes don't escape markdown"
+                "description": "Backslashes don't escape markdown",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=e543bf51-edbd-42cd-8930-a0fbf49ef5c9"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "forums": [
+          {
+            "operationSummary": "Create a thread in a forum",
+            "operationId": "ForumThreadCreate",
+            "issues": [
+              {
+                "description": "Content is not displayed in the client",
+                "isComplete": true
+              }
+            ]
+          }
+        ],
+        "reactions": [
+          {
+            "operationId": "ContentReactionCreate",
+            "operationSummary": "Add a reaction emote",
+            "issues": [
+              {
+                "description": "Does not raise a 403 if you add a reaction to content you do not have permission to view, and instead adds the reaction successfully"
+              }
+            ]
+          }
+        ],
+        "websockets": [
+          {
+            "operationSummary": "ChatMessageCreated",
+            "operationId": "ChatMessageCreated",
+            "issues": [
+              {
+                "description": "Received even when the bot does not have permission to view the message's channel",
+                "isComplete": true
+              },
+              {
+                "description": "JSON content is interpreted as literal instead of string",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=35f9e301-d9d4-4c95-bd91-0ad6b63c3702"
+                  }
+                ]
               }
             ]
           }
