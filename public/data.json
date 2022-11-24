@@ -107,8 +107,138 @@
     },
     {
       "title": "Feature Requests",
-      "description": "",
-      "items": {}
+      "description": "Megapost of feature requests made to the #feedback channel. You may want to look here before posting anything there.",
+      "items": {
+        "members": [
+          {
+            "operationId": "",
+            "operationSummary": "Members",
+            "issues": [
+              {
+                "description": "[Team Member Joined gateway event](https://www.guilded.gg/docs/api/websockets/TeamMemberJoined)",
+                "isComplete": true,
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=4098e619-a08e-41ec-928a-42c2a1e092ea"
+                  }
+                ],
+                "issues": [
+                  {
+                    "description": "The invite code that was used",
+                    "references": [
+                      {
+                        "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=ba117660-3b18-443d-b96b-8d8375aa0420"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "description": "[Team Member Left gateway event](https://www.guilded.gg/docs/api/websockets/TeamMemberRemoved)",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=4098e619-a08e-41ec-928a-42c2a1e092ea"
+                  }
+                ],
+                "isComplete": true
+              },
+              {
+                "description": "[Team Member Updated gateway event](https://www.guilded.gg/docs/api/websockets/TeamMemberUpdated)",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=4098e619-a08e-41ec-928a-42c2a1e092ea"
+                  }
+                ],
+                "isComplete": true,
+                "issues": [
+                  {
+                    "description": "`userInfo.avatar`",
+                    "references": [
+                      {
+                        "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=64c5045b-734f-4e28-a146-6a604b14a3c5"
+                      }
+                    ]
+                  },
+                  {
+                    "description": "`userInfo.banner`"
+                  },
+                  {
+                    "description": "`userInfo.name`",
+                    "references": [
+                      {
+                        "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=64c5045b-734f-4e28-a146-6a604b14a3c5"
+                      }
+                    ]
+                  },
+                  {
+                    "description": "`userInfo.xp`"
+                  }
+                ]
+              },
+              {
+                "description": "[Kick Team Member endpoint](https://www.guilded.gg/docs/api/members/ServerMemberDelete)",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=745e9877-a2de-4718-9fa3-8226393a8efd"
+                  }
+                ],
+                "isComplete": true
+              },
+              {
+                "description": "[Ban Team Member endpoint](https://www.guilded.gg/docs/api/member-bans/ServerMemberBanCreate)",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=745e9877-a2de-4718-9fa3-8226393a8efd"
+                  }
+                ],
+                "isComplete": true
+              },
+              {
+                "description": "[Unban Team Member endpoint](https://www.guilded.gg/docs/api/member-bans/ServerMemberBanDelete)",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=745e9877-a2de-4718-9fa3-8226393a8efd"
+                  }
+                ],
+                "isComplete": true
+              },
+              {
+                "description": "[Team Member Kicked gateway event](https://www.guilded.gg/docs/api/websockets/ServerMemberRemoved)",
+                "isComplete": true
+              },
+              {
+                "description": "[Team Member Banned gateway event](https://www.guilded.gg/docs/api/websockets/TeamMemberBanned)",
+                "isComplete": true
+              },
+              {
+                "description": "[Team Member Unbanned gateway event](https://www.guilded.gg/docs/api/websockets/TeamMemberUnbanned)",
+                "isComplete": true
+              },
+              {
+                "description": "[Get Team Member endpoint](https://www.guilded.gg/docs/api/members/ServerMemberRead)",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=4098e619-a08e-41ec-928a-42c2a1e092ea"
+                  }
+                ],
+                "isComplete": true
+              },
+              {
+                "description": "[Get Team Members endpoint](https://www.guilded.gg/docs/api/members/ServerMemberReadMany)",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=4098e619-a08e-41ec-928a-42c2a1e092ea"
+                  },
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=ef286c07-fe68-4178-a828-2309c1350f83"
+                  }
+                ],
+                "isComplete": true
+              }
+            ]
+          }
+        ]
+      }
     }
   ]
 }
