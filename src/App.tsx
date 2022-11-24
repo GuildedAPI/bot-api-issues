@@ -60,13 +60,18 @@ const Index: React.FC = () => {
                   {items.map((item) => {
                     const url = `https://www.guilded.gg/docs/api/${tag}/${item.operationId}`;
                     return (
-                      <div key={item.operationId} id={item.operationId}>
+                      <div
+                        key={item.operationId}
+                        id={item.operationId}
+                        className='target:bg-guilded-gilded/[0.05] py-1 px-2 -mx-2 rounded'
+                      >
                         <h1 className='font-bold text-2xl flex'>
                           <Link href={url}>{item.operationSummary}</Link>
                           <a href={`#${item.operationId}`} className='ml-2'>
                             Link
                           </a>
                         </h1>
+                        <hr className='mb-2 border-guilded-gray' />
                         <Issues issues={item.issues} />
                       </div>
                     );
@@ -85,15 +90,22 @@ const Issues: React.FC<{ issues: Issue[] }> = ({ issues }) => {
   return (
     <ul>
       {issues.map((issue, index) => (
-        <li key={`issue-${index}/${issues.length}`}>
-          <input
-            type='checkbox'
-            defaultChecked={issue.isComplete}
-            className='mr-2'
-            disabled
-          />
-          {issue.description}
-        </li>
+        <>
+          <li key={`issue-${index}/${issues.length}`}>
+            <input
+              type='checkbox'
+              defaultChecked={issue.isComplete}
+              className='mr-2'
+              disabled
+            />
+            {issue.description}
+          </li>
+          {issue.issues && (
+            <div className='ml-6'>
+              <Issues issues={issue.issues} />
+            </div>
+          )}
+        </>
       ))}
     </ul>
   );

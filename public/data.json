@@ -10,7 +10,19 @@
             "operationId": "ChannelMessageCreate",
             "issues": [
               {
-                "description": "Sometimes raises a 500 if you pass certain markdown strings to `content`"
+                "description": "Sometimes raises a 500 if you pass certain markdown strings to `content`",
+                "issues": [
+                  { "description": "`***`" },
+                  { "description": "Codeblocks" },
+                  { "description": "`[object Object]`" },
+                  { "description": "Numbered lists" },
+                  { "description": "Bullet lists" },
+                  { "description": "URLs when prefixed with `\\n`" },
+                  { "description": "`***`" }
+                ]
+              },
+              {
+                "description": "Backslashes don't escape markdown"
               }
             ]
           }
