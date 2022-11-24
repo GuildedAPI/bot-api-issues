@@ -4,7 +4,7 @@ export interface Data {
 
 interface ResourceBlock {
   title: string;
-  description: string;
+  description: string; // Accepts GitHub-flavored markdown
   items: Record<string, ResourceItem[]>; // e.g. { channels: ..., socialLinks: ... } - should correspond to a tag in the docs
 }
 
@@ -15,7 +15,7 @@ interface ResourceItem {
 }
 
 export interface Issue {
-  description: string; // Accepts markdown
+  description: string; // Accepts GitHub-flavored markdown
   references?: Reference[]; // Messages (or any content) mentioning the issue or request, if applicable
   isComplete?: boolean; // The issue is no longer applicable
   completedAt?: string; // Approximate date or exact time (e.g. of an announcement) when the issue was resolved. Not required with isComplete

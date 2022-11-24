@@ -1,6 +1,7 @@
 import React from 'react';
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
 import { Link } from './components/Link';
+import { Markdown } from './components/Markdown';
 import { Data, Issue } from './types/data';
 
 const queryClient = new QueryClient();
@@ -54,7 +55,7 @@ const Index: React.FC = () => {
               <summary className='font-bold text-lg cursor-pointer'>
                 {section.title}
               </summary>
-              <p className='text-guilded-subtitle'>{section.description}</p>
+              <p className='text-guilded-subtitle'><Markdown>{section.description}</Markdown></p>
               {Object.entries(section.items).map(([tag, items]) => (
                 <div key={tag} className='mt-2'>
                   {items.map((item) => {
