@@ -650,6 +650,92 @@
               }
             ]
           }
+        ],
+        "webhooks": [
+          {
+            "operationId": "",
+            "operationSummary": "Webhooks",
+            "issues": [
+              {
+                "description": "[Create Webhook endpoint](https://www.guilded.gg/docs/api/webhook/WebhookCreate)",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=745e9877-a2de-4718-9fa3-8226393a8efd"
+                  },
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=7b2f0911-d4ca-4ba6-acee-09d4579d32db"
+                  }
+                ],
+                "isComplete": true
+              },
+              {
+                "description": "[Delete Webhook endpoint](https://www.guilded.gg/docs/api/webhook/WebhookDelete)",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=745e9877-a2de-4718-9fa3-8226393a8efd"
+                  }
+                ],
+                "isComplete": true
+              },
+              {
+                "description": "[Update Webhook endpoint](https://www.guilded.gg/docs/api/webhook/WebhookUpdate)",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=745e9877-a2de-4718-9fa3-8226393a8efd"
+                  }
+                ],
+                "isComplete": true
+              },
+              {
+                "description": "[Webhook Created gateway event](https://www.guilded.gg/docs/api/websockets/TeamWebhookCreated)",
+                "isComplete": true
+              },
+              {
+                "description": "[Webhook Deleted gateway event](https://www.guilded.gg/docs/api/websockets/TeamWebhookUpdated)",
+                "isComplete": true
+              },
+              {
+                "description": "[Webhook Updated gateway event](https://www.guilded.gg/docs/api/websockets/TeamWebhookUpdated)",
+                "isComplete": true
+              },
+              {
+                "description": "[Get Webhook endpoint](https://www.guilded.gg/docs/api/webhook/WebhookRead)",
+                "isComplete": true
+              },
+              {
+                "description": "Sending `username` & `avatar` per-message",
+                "isComplete": true
+              },
+              {
+                "description": "Sending non-media files",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/42ce6b45-fdae-4b47-ba2e-684166c3aae2/chat?messageId=6384fb8b-b7d1-4d2d-828c-42048aa94fba"
+                  }
+                ]
+              },
+              { "description": "Delete Webhook Message endpoint" },
+              {
+                "description": "Edit Webhook Message endpoint",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=242cd347-51fe-4d3c-8480-072940e99eee"
+                  }
+                ]
+              },
+              {
+                "description": "[Get Webhooks](https://www.guilded.gg/docs/api/webhook/WebhookReadMany) should be paginated as there is seemingly no maximum number of webhooks",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=d916b368-ab44-4af2-9c1f-085513f3340c"
+                  }
+                ]
+              },
+              {
+                "description": "Ideally [Update Webhook](https://www.guilded.gg/docs/api/webhook/WebhookUpdate)'s `name` should be optional; you may only wish to update the webhook's channel and not have its name in cache"
+              }
+            ]
+          }
         ]
       }
     }
