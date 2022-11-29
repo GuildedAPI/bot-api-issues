@@ -71,11 +71,13 @@ const Index: React.FC = () => {
               >
                 <summary className='font-bold text-2xl cursor-pointer flex'>
                   <span>{section.title}</span>
-                  <span className='text-guilded-gilded ml-auto'>
-                    {flattened.filter((i) => i.isComplete).length}
-                  </span>
-                  <span className='dark:text-guilded-subtitle'>
-                    /{flattened.length}
+                  <span title='Completed / Total' className='ml-auto'>
+                    <span className='text-guilded-gilded'>
+                      {flattened.filter((i) => i.isComplete).length}
+                    </span>
+                    <span className='dark:text-guilded-subtitle'>
+                      /{flattened.length}
+                    </span>
                   </span>
                 </summary>
                 <p className='text-guilded-subtitle'>
