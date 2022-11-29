@@ -55,7 +55,7 @@ const Index: React.FC = () => {
       {isLoading || !data ? (
         'Loading...'
       ) : (
-        <div className='space-y-2'>
+        <div className='space-y-4'>
           {data.sections.map((section) => {
             const flattened = [];
             for (const items of Object.values(section.items)) {
@@ -67,7 +67,7 @@ const Index: React.FC = () => {
               <details
                 key={section.title}
                 id={section.title.toLowerCase().replace(/ /g, '-')}
-                className='rounded-lg bg-guilded-slate py-4 px-6'
+                className='rounded-lg bg-guilded-slate py-4 px-6 shadow-lg'
               >
                 <summary className='font-bold text-2xl cursor-pointer flex'>
                   <span>{section.title}</span>
