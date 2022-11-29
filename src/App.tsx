@@ -58,11 +58,17 @@ const Index: React.FC = () => {
         <div className='space-y-4'>
           {data.sections.map((section) => {
             const flattened = [];
-            for (const items of Object.values(section.items)) {
-              for (const item of items) {
-                flattened.push(...getAllChildrenIssues(item.issues));
+            if (section.items) {
+              for (const items of Object.values(section.items)) {
+                for (const item of items) {
+                  flattened.push(...getAllChildrenIssues(item.issues));
+                }
               }
             }
+            if (section.issues) {
+              flattened.push(...getAllChildrenIssues(section.issues));
+            }
+
             return (
               <details
                 key={section.title}
@@ -83,37 +89,46 @@ const Index: React.FC = () => {
                 <p className='text-guilded-subtitle'>
                   <Markdown>{section.description}</Markdown>
                 </p>
-                {Object.entries(section.items).map(([tag, items]) => (
-                  <div key={tag} className='mt-2'>
-                    {items.map((item) => {
-                      const url = `https://www.guilded.gg/docs/api/${tag}/${item.operationId}`;
-                      return (
-                        <div
-                          key={item.operationId}
-                          id={item.operationId || item.operationSummary}
-                          className='target:bg-guilded-gilded/[0.05] py-1 px-2 -mx-2 rounded'
-                        >
-                          <h1 className='font-bold text-lg flex group'>
-                            <Link href={url}>{item.operationSummary}</Link>
-                            <a
-                              href={`#${
-                                item.operationId || item.operationSummary
-                              }`}
-                              className='opacity-0 group-hover:opacity-80 transition text-sm my-auto ml-2'
-                            >
-                              &#x1f517;
-                            </a>
-                          </h1>
-                          <hr className='mb-2 border-guilded-gray' />
-                          <Issues
-                            issues={item.issues}
-                            hideComplete={hideComplete}
-                          />
-                        </div>
-                      );
-                    })}
+                {section.items &&
+                  Object.entries(section.items).map(([tag, items]) => (
+                    <div key={tag} className='mt-2'>
+                      {items.map((item) => {
+                        const url = `https://www.guilded.gg/docs/api/${tag}/${item.operationId}`;
+                        return (
+                          <div
+                            key={item.operationId}
+                            id={item.operationId || item.operationSummary}
+                            className='target:bg-guilded-gilded/[0.05] py-1 px-2 -mx-2 rounded'
+                          >
+                            <h1 className='font-bold text-lg flex group'>
+                              <Link href={url}>{item.operationSummary}</Link>
+                              <a
+                                href={`#${
+                                  item.operationId || item.operationSummary
+                                }`}
+                                className='opacity-0 group-hover:opacity-80 transition text-sm my-auto ml-2'
+                              >
+                                &#x1f517;
+                              </a>
+                            </h1>
+                            <hr className='mb-2 border-guilded-gray' />
+                            <Issues
+                              issues={item.issues}
+                              hideComplete={hideComplete}
+                            />
+                          </div>
+                        );
+                      })}
+                    </div>
+                  ))}
+                {section.issues && (
+                  <div className='mt-4'>
+                    <Issues
+                      issues={section.issues}
+                      hideComplete={hideComplete}
+                    />
                   </div>
-                ))}
+                )}
               </details>
             );
           })}

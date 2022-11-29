@@ -5,7 +5,8 @@ export interface Data {
 interface ResourceBlock {
   title: string;
   description: string; // Accepts GitHub-flavored markdown
-  items: Record<string, ResourceItem[]>; // e.g. { channels: ..., socialLinks: ... } - should correspond to a tag in the docs
+  items?: Record<string, ResourceItem[]>; // e.g. { channels: ..., socialLinks: ... } - should correspond to a tag in the docs
+  issues?: Issue[];
 }
 
 interface ResourceItem {
