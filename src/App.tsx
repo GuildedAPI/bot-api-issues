@@ -30,8 +30,10 @@ const Index: React.FC = () => {
       <div className='mb-2'>
         <p>
           Below are a couple nitpicks I have about the current API and its docs.
-          Some of these have already been mentioned in the API server by me and
-          others but I figured this was a nice way to collect & present them.
+          Some of these have already been mentioned in{' '}
+          <Link href='https://www.guilded.gg/API-Official'>the API server</Link>{' '}
+          by me and others but I figured this was a nice way to collect &
+          present them.
         </p>
         <p className='space-x-2 text-sm font-bold'>
           <Link href='https://github.com/GuildedAPI/bot-api-issues#contributing'>
@@ -66,7 +68,6 @@ const Index: React.FC = () => {
                 key={section.title}
                 id={section.title.toLowerCase().replace(/ /g, '-')}
                 className='rounded-lg bg-guilded-slate py-4 px-6'
-                open
               >
                 <summary className='font-bold text-2xl cursor-pointer flex'>
                   <span>{section.title}</span>
