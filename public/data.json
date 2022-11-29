@@ -237,6 +237,257 @@
               }
             ]
           }
+        ],
+        "servers": [
+          {
+            "operationId": "",
+            "operationSummary": "Servers",
+            "issues": [
+              { "description": "Get Server endpoint", "isComplete": true },
+              { "description": "Get Current User Servers endpoint" },
+              {
+                "description": "Receiving your servers upon connecting to the gateway (à la Discord sending [GUILD_CREATE](https://discord.com/developers/docs/topics/gateway#guild-create)s upon connecting)"
+              },
+              {
+                "description": "Receiving `serverId` for resources in a server, both via REST responses and the gateway",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/7c887006-8ded-4932-b637-c002e013b241/chat?messageId=8593869c-fa11-4d71-83ed-a70ccd81d3c8"
+                  }
+                ],
+                "isComplete": true
+              },
+              {
+                "description": "Server Update gateway event",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=4098e619-a08e-41ec-928a-42c2a1e092ea"
+                  }
+                ]
+              },
+              { "description": "Server Delete gateway event" },
+              {
+                "description": "Create Audit Log Event endpoint",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/712576c1-81d4-4f63-888b-2f2d1f8f13db/chat?messageId=e41ef053-6014-4d5c-a993-b182b3f06a05"
+                  },
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=64c5045b-734f-4e28-a146-6a604b14a3c5"
+                  }
+                ]
+              },
+              {
+                "description": "Application Created gateway event",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=64c5045b-734f-4e28-a146-6a604b14a3c5"
+                  }
+                ]
+              },
+              {
+                "description": "Application Accepted gateway event",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=64c5045b-734f-4e28-a146-6a604b14a3c5"
+                  }
+                ]
+              },
+              {
+                "description": "Application Denied gateway events",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=64c5045b-734f-4e28-a146-6a604b14a3c5"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "roles": [
+          {
+            "operationId": "",
+            "operationSummary": "Roles",
+            "issues": [
+              {
+                "description": "Get Role endpoint",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=64c5045b-734f-4e28-a146-6a604b14a3c5"
+                  }
+                ]
+              },
+              {
+                "description": "Get Team Roles endpoint",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=64c5045b-734f-4e28-a146-6a604b14a3c5"
+                  }
+                ]
+              },
+              {
+                "description": "Get Role Members endpoint",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=64c5045b-734f-4e28-a146-6a604b14a3c5"
+                  }
+                ]
+              },
+              { "description": "Update Role endpoint" },
+              { "description": "Delete Role endpoint" },
+              {
+                "description": "\"Copy role ID\" button in more locations",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=c42358fe-0c84-43a1-8b91-49e4992cd649"
+                  }
+                ],
+                "isComplete": true
+              }
+            ]
+          },
+          {
+            "operationId": "",
+            "operationSummary": "Permissions",
+            "issues": [
+              {
+                "description": "Document permissions and how to interface with them"
+              },
+              { "description": "`Role.permissions`" },
+              {
+                "description": "`ServerMember.permissions`",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=8eade77a-5be8-410a-940b-5face81e3701"
+                  }
+                ]
+              },
+              {
+                "description": "`ServerChannel.permissions` / `.permissionOverwrites`"
+              }
+            ]
+          }
+        ],
+        "channels": [
+          {
+            "operationId": "",
+            "operationSummary": "Channels",
+            "issues": [
+              {
+                "description": "Get Server Channels endpoint",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=4098e619-a08e-41ec-928a-42c2a1e092ea"
+                  }
+                ]
+              },
+              {
+                "description": "Get Server Channel endpoint",
+                "isComplete": true
+              },
+              {
+                "description": "Create Server Channel endpoint",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=4098e619-a08e-41ec-928a-42c2a1e092ea"
+                  },
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=e9a03da2-8fbe-4849-be48-c97a1ec6be50"
+                  }
+                ],
+                "isComplete": true
+              },
+              {
+                "description": "Update Server Channel endpoint",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=4098e619-a08e-41ec-928a-42c2a1e092ea"
+                  },
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=e9a03da2-8fbe-4849-be48-c97a1ec6be50"
+                  }
+                ],
+                "isComplete": true,
+                "issues": [{ "description": "`categoryId`" }]
+              },
+              {
+                "description": "Delete Server Channel endpoint",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=e9a03da2-8fbe-4849-be48-c97a1ec6be50"
+                  }
+                ],
+                "isComplete": true
+              },
+              { "description": "Archive/Unarchive Server Channel endpoints" },
+              {
+                "description": "Server Channel Created gateway event",
+                "isComplete": true
+              },
+              {
+                "description": "Server Channel Updated gateway event",
+                "isComplete": true
+              },
+              {
+                "description": "Server Channel Deleted gateway event",
+                "isComplete": true
+              },
+              {
+                "description": "Voice Channel Joined gateway event",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=64c5045b-734f-4e28-a146-6a604b14a3c5"
+                  }
+                ]
+              },
+              {
+                "description": "Voice Channel Removed gateway event",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=64c5045b-734f-4e28-a146-6a604b14a3c5"
+                  }
+                ],
+                "issues": [
+                  {
+                    "description": "Was force disconnected",
+                    "references": [
+                      {
+                        "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=64c5045b-734f-4e28-a146-6a604b14a3c5"
+                      }
+                    ]
+                  },
+                  {
+                    "description": "Was moved",
+                    "references": [
+                      {
+                        "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=64c5045b-734f-4e28-a146-6a604b14a3c5"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "description": "Stream Channel Joined gateway event",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=64c5045b-734f-4e28-a146-6a604b14a3c5"
+                  }
+                ]
+              },
+              {
+                "description": "Stream Channel Removed gateway event",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=64c5045b-734f-4e28-a146-6a604b14a3c5"
+                  }
+                ],
+                "issues": [
+                  { "description": "Was force disconnected" },
+                  { "description": "Was moved" }
+                ]
+              }
+            ]
+          }
         ]
       }
     }
