@@ -35,7 +35,7 @@ const Index: React.FC = () => {
           by me and others but I figured this was a nice way to collect &
           present them.
         </p>
-        <p className='space-x-2 text-sm font-bold'>
+        <p className='space-x-2 text-sm font-bold mt-1 mb-4'>
           <Link href='https://github.com/GuildedAPI/bot-api-issues#contributing'>
             Contribute to this site
           </Link>
