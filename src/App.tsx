@@ -129,15 +129,19 @@ const Issues: React.FC<{ issues: Issue[] }> = ({ issues }) => {
               disabled
             />
             <Markdown>{issue.description}</Markdown>
-            {issue.references &&
-              issue.references.map((reference, refIndex) => (
-                <sup
-                  className='mt-3 ml-1'
-                  key={`reference-${reference.url}-${refIndex}`}
-                >
-                  <Link href={reference.url}>{refIndex + 1}</Link>
-                </sup>
-              ))}
+            {issue.references && (
+              <div className='ml-1'>
+                {issue.references.map((reference, refIndex) => (
+                  <sup
+                    className='mt-3'
+                    key={`reference-${reference.url}-${refIndex}`}
+                  >
+                    {refIndex > 0 && ', '}
+                    <Link href={reference.url}>{refIndex + 1}</Link>
+                  </sup>
+                ))}
+              </div>
+            )}
           </li>
           {issue.issues && (
             <div className='ml-6'>
