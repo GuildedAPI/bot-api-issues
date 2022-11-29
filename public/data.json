@@ -809,6 +809,57 @@
           }
         ]
       }
+    },
+    {
+      "title": "Gateway Docs",
+      "description": "",
+      "items": {
+        "websockets": [
+          {
+            "operationId": "ServerRolesUpdated",
+            "operationSummary": "ServerRolesUpdated",
+            "issues": [
+              {
+                "description": "`teamRolesUpdated` is camelCase, but the rest of the events are PascalCase",
+                "isComplete": true
+              },
+              {
+                "description": "Type `[object]` is vague",
+                "isComplete": true
+              }
+            ]
+          },
+          {
+            "operationId": "ChatMessageDeleted",
+            "operationSummary": "ChatMessageDeleted",
+            "issues": [
+              {
+                "description": "`deletedAt`'s type is \"string\" but other ISO8601 values are \"date-time string\" instead",
+                "isComplete": true
+              }
+            ]
+          },
+          {
+            "operationId": "../replay",
+            "operationSummary": "Replaying events",
+            "issues": [
+              { "description": "The message ID TTL is not documented" },
+              {
+                "description": "The event that is sent when connecting with an expired message ID is not documented"
+              }
+            ]
+          },
+          {
+            "operationId": "ServerWebhookUpdated",
+            "operationSummary": "ServerWebhookUpdated",
+            "issues": [
+              {
+                "description": "It should be noted that this event is also fired when the webhook is deleted"
+              }
+            ]
+          }
+        ]
+      }
     }
   ]
 }
