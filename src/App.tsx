@@ -146,13 +146,20 @@ const Issues: React.FC<{ issues: Issue[]; hideComplete?: boolean }> = ({
         return (
           <>
             <li key={`issue-${index}/${issues.length}`} className='flex'>
-              <div
-                className={`rounded-full w-4 min-w-[1rem] h-4 ${
-                  issue.isComplete
-                    ? 'bg-guilded-gilded'
-                    : 'border-2 border-guilded-gilded/70'
-                } mr-2 mt-1`}
-              />
+              <a
+                href='https://github.com/GuildedAPI/bot-api-issues#contributing'
+                target='_blank'
+                rel='noreferrer'
+                className='mr-2'
+              >
+                <div
+                  className={`rounded-full mt-1 w-4 min-w-[1rem] h-4 ${
+                    issue.isComplete
+                      ? 'bg-guilded-gilded'
+                      : 'border-2 border-guilded-gilded/70'
+                  }`}
+                />
+              </a>
               <Markdown>{issue.description}</Markdown>
               {issue.references && (
                 <div className='ml-1'>
