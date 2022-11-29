@@ -488,6 +488,165 @@
               }
             ]
           }
+        ],
+        "chat": [
+          {
+            "operationId": "",
+            "operationSummary": "Chat & messaging",
+            "issues": [
+              {
+                "description": "Bulk Delete Messages endpoint",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=3bac8e2f-5c9c-4ea9-a788-07d90d746130"
+                  }
+                ]
+              },
+              {
+                "description": "Creating custom system messages",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/4e072f51-fa35-4c52-b4db-4f8593fc326c/chat?messageId=54458889-01aa-48a2-bc67-f47a00031146"
+                  }
+                ]
+              },
+              {
+                "description": "`limit` query arg on [Get Channel Messages](https://www.guilded.gg/docs/api/chat/ChannelMessageReadMany)",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=ef286c07-fe68-4178-a828-2309c1350f83"
+                  },
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=fa7d8bb3-8b33-414f-87bc-cc796de1fbea"
+                  }
+                ],
+                "isComplete": true
+              },
+              {
+                "description": "Markdown",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=d824bbd8-fda9-42c1-9cee-3cfc96dc32fb"
+                  }
+                ],
+                "isComplete": true
+              },
+              {
+                "description": "Mentions",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=fba5742a-7210-4fd3-8e35-c3928344c211"
+                  }
+                ],
+                "issues": [
+                  {
+                    "description": "Received mentions array",
+                    "references": [
+                      {
+                        "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=045d22df-e90a-4fec-b5fd-671e74c0b28f"
+                      }
+                    ],
+                    "isComplete": true
+                  }
+                ]
+              },
+              {
+                "description": "Embeds",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=6f98d506-8478-4ba1-8dd8-579bd9de551e"
+                  }
+                ],
+                "issues": [
+                  {
+                    "description": "Markdown in all embed fields",
+                    "references": [
+                      {
+                        "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=c5132543-e75f-4516-8d47-fa64a791a03a"
+                      }
+                    ]
+                  },
+                  {
+                    "description": "Active links in descriptions",
+                    "references": [
+                      {
+                        "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=d3c2b051-a402-4f89-b38b-4f1e64e7ccc4"
+                      }
+                    ],
+                    "isComplete": true
+                  },
+                  {
+                    "description": "Greater field customization",
+                    "references": [
+                      {
+                        "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=39e7a8a0-5bc3-4508-b15d-100c18618b63"
+                      },
+                      {
+                        "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=3a2bea13-a51b-4b3d-8cc4-0c7f2c9649ed"
+                      },
+                      {
+                        "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=983d1102-9338-4573-a786-81f2b617d324), [4](https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=208fda6c-1a2e-45d6-89fc-77a808723f4f"
+                      }
+                    ]
+                  },
+                  {
+                    "description": "Omitted/null sidebar color",
+                    "references": [
+                      {
+                        "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/dac18340-73d9-4d26-a2ed-373ef897fbd5/chat?messageId=b7a57790-1d1e-4079-9a7b-ae886eb95805"
+                      },
+                      {
+                        "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=3a2bea13-a51b-4b3d-8cc4-0c7f2c9649ed"
+                      }
+                    ]
+                  },
+                  {
+                    "description": "Provider field in rich embeds",
+                    "references": [
+                      {
+                        "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=5054bd42-f3ee-4c36-8ede-38cb95cae96c"
+                      }
+                    ]
+                  },
+                  {
+                    "description": "Slack-like customization",
+                    "references": [
+                      {
+                        "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=1c5537e5-8028-46ca-9e7c-94153879cef6"
+                      }
+                    ]
+                  }
+                ],
+                "isComplete": true
+              },
+              {
+                "description": "Forms",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=f8834148-96f9-4782-8665-42e005c8b50a"
+                  }
+                ],
+                "issues": [
+                  {
+                    "description": "Greater customization",
+                    "references": [
+                      {
+                        "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=a9f1c364-a7ed-4e4e-8e60-a45f5e8768b9"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "description": "Positional content",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=39ef1f14-d03f-4269-927a-426b496f3da8"
+                  }
+                ]
+              }
+            ]
+          }
         ]
       }
     }
