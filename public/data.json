@@ -860,6 +860,104 @@
           }
         ]
       }
+    },
+    {
+      "title": "REST Docs",
+      "description": "",
+      "items": {
+        "chat": [
+          {
+            "operationId": "ChannelMessageCreate",
+            "operationSummary": "Create channel message",
+            "issues": [
+              {
+                "description": "`replyMessageIds` is plural but the description is singular",
+                "isComplete": true
+              },
+              {
+                "description": "`replyMessageIds`'s limit of 5 is not documented",
+                "isComplete": true
+              }
+            ]
+          },
+          {
+            "operationId": "ChannelMessageReadMany",
+            "operationSummary": "Get channel messages",
+            "issues": [
+              {
+                "description": "`includePrivate` query parameter is included in the same table as the `channelId` path parameter",
+                "isComplete": true
+              }
+            ]
+          }
+        ],
+        "listItems": [
+          {
+            "operationId": "ListItemCreate",
+            "operationSummary": "Create a list item",
+            "issues": [
+              {
+                "description": "The example response does not match the example payload"
+              }
+            ]
+          }
+        ],
+        "reactions": [
+          {
+            "operationId": "ContentReactionCreate",
+            "operationSummary": "Add a reaction emote",
+            "issues": [
+              {
+                "description": "~~Return value of a `ContentReaction` is not documented~~ This endpoint no longer has a response body",
+                "isComplete": true
+              }
+            ]
+          }
+        ],
+        "socialLinks": [
+          {
+            "operationId": "MemberSocialLinkRead",
+            "operationSummary": "Retrieves a member's public social links",
+            "issues": [
+              {
+                "description": "The name is inconsistent with the rest of the endpoint names (`verbs a noun` instead of `verb a noun` or `verb noun`)"
+              },
+              {
+                "description": "The example response is misleading (it should be encased in a `socialLink`)",
+                "isComplete": true
+              },
+              {
+                "description": "`serviceId` in responses should be documented as optional",
+                "isComplete": true
+              },
+              {
+                "description": "`handle` in responses should be documented",
+                "isComplete": true
+              }
+            ]
+          }
+        ],
+        "webhook": [
+          {
+            "operationId": "WebhookCreate",
+            "operationSummary": "Create a webhook",
+            "issues": [
+              {
+                "description": "Example payload does not include required parameter `channelId`"
+              }
+            ]
+          },
+          {
+            "operationId": "WebhookDelete",
+            "operationSummary": "Delete a server webhook",
+            "issues": [
+              {
+                "description": "Deletion behavior is not documented: If the webhook has been used, it remains on the platform - fetchable with `deletedAt` present - else it is deleted permanently as though it never existed."
+              }
+            ]
+          }
+        ]
+      }
     }
   ]
 }
