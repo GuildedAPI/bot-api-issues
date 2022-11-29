@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
 import { Link } from './components/Link';
 import { Markdown } from './components/Markdown';
@@ -23,6 +23,8 @@ const Index: React.FC = () => {
     { refetchOnWindowFocus: false }
   );
 
+  const [hideComplete, setHideComplete] = useState(false);
+
   return (
     <div className='mx-auto max-w-2xl'>
       <div className='mb-2'>
@@ -39,6 +41,13 @@ const Index: React.FC = () => {
           <Link href='https://www.guilded.gg/docs/api/introduction'>
             Guilded API Docs
           </Link>
+          <span>•</span>
+          <button
+            className='text-guilded-link hover:text-guilded-white transition'
+            onClick={() => setHideComplete(!hideComplete)}
+          >
+            {hideComplete ? 'Show' : 'Hide'} complete issues
+          </button>
         </p>
       </div>
       {isLoading || !data ? (
@@ -93,7 +102,10 @@ const Index: React.FC = () => {
                             </a>
                           </h1>
                           <hr className='mb-2 border-guilded-gray' />
-                          <Issues issues={item.issues} />
+                          <Issues
+                            issues={item.issues}
+                            hideComplete={hideComplete}
+                          />
                         </div>
                       );
                     })}
@@ -108,40 +120,59 @@ const Index: React.FC = () => {
   );
 };
 
-const Issues: React.FC<{ issues: Issue[] }> = ({ issues }) => {
-  return (
+const Issues: React.FC<{ issues: Issue[]; hideComplete?: boolean }> = ({
+  issues,
+  hideComplete,
+}) => {
+  const allChildren = getAllChildrenIssues(issues);
+  const hasIncompleteChildren = !!allChildren.filter((i) => !i.isComplete)
+    .length;
+
+  return !hasIncompleteChildren && hideComplete ? (
+    <p>No incomplete issues.</p>
+  ) : (
     <ul>
-      {issues.map((issue, index) => (
-        <>
-          <li key={`issue-${index}/${issues.length}`} className='flex'>
-            <input
-              type='checkbox'
-              defaultChecked={issue.isComplete}
-              className='mr-2 mb-auto mt-1'
-              disabled
-            />
-            <Markdown>{issue.description}</Markdown>
-            {issue.references && (
-              <div className='ml-1'>
-                {issue.references.map((reference, refIndex) => (
-                  <sup
-                    className='mt-3'
-                    key={`reference-${reference.url}-${refIndex}`}
-                  >
-                    {refIndex > 0 && ', '}
-                    <Link href={reference.url}>{refIndex + 1}</Link>
-                  </sup>
-                ))}
+      {issues.map((issue, index) => {
+        if (
+          hideComplete &&
+          issue.isComplete &&
+          !getAllChildrenIssues(issue.issues ?? []).filter((i) => !i.isComplete)
+            .length
+        ) {
+          return undefined;
+        }
+        return (
+          <>
+            <li key={`issue-${index}/${issues.length}`} className='flex'>
+              <input
+                type='checkbox'
+                defaultChecked={issue.isComplete}
+                className='mr-2 mb-auto mt-1'
+                disabled
+              />
+              <Markdown>{issue.description}</Markdown>
+              {issue.references && (
+                <div className='ml-1'>
+                  {issue.references.map((reference, refIndex) => (
+                    <sup
+                      className='mt-3'
+                      key={`reference-${reference.url}-${refIndex}`}
+                    >
+                      {refIndex > 0 && ', '}
+                      <Link href={reference.url}>{refIndex + 1}</Link>
+                    </sup>
+                  ))}
+                </div>
+              )}
+            </li>
+            {issue.issues && (
+              <div className='ml-6'>
+                <Issues issues={issue.issues} />
               </div>
             )}
-          </li>
-          {issue.issues && (
-            <div className='ml-6'>
-              <Issues issues={issue.issues} />
-            </div>
-          )}
-        </>
-      ))}
+          </>
+        );
+      })}
     </ul>
   );
 };
