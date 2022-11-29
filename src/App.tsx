@@ -89,13 +89,13 @@ const Index: React.FC = () => {
                           id={item.operationId || item.operationSummary}
                           className='target:bg-guilded-gilded/[0.05] py-1 px-2 -mx-2 rounded'
                         >
-                          <h1 className='font-bold text-2xl flex group'>
+                          <h1 className='font-bold text-lg flex group'>
                             <Link href={url}>{item.operationSummary}</Link>
                             <a
                               href={`#${
                                 item.operationId || item.operationSummary
                               }`}
-                              className='opacity-0 group-hover:opacity-100 transition text-lg my-auto ml-2'
+                              className='opacity-0 group-hover:opacity-80 transition text-sm my-auto ml-2'
                             >
                               &#x1f517;
                             </a>
