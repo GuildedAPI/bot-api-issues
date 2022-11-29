@@ -958,6 +958,58 @@
           }
         ]
       }
+    },
+    {
+      "title": "Docs",
+      "description": "These issues are found throughout the documentation.",
+      "issues": [
+        {
+          "description": "`boolean` types in query string arguments are not well-elaborated on (i.e., [`true` vs `True`](https://www.guilded.gg/docs/api/faqs))",
+          "isComplete": true
+        },
+        {
+          "description": "Many endpoint descriptions & gateway event descriptions are missing",
+          "isComplete": true
+        },
+        {
+          "description": "Many parameter descriptions are missing",
+          "isComplete": true
+        },
+        {
+          "description": "Types like `uuid [string]` do get the message across but they are not very clear IMO - something like `Array of UUIDs` would be better"
+        },
+        {
+          "description": "Some endpoints are named \"`Verb` a `resource`\" while others are \"`Verb` `resource`\", e.g. \"Create a list item\" vs \"Create channel message\""
+        },
+        {
+          "description": "It would be pretty cool to see a link button on hover for each header for easier copying; wouldn't have to scroll it to the top and copy the address bar",
+          "isComplete": true
+        },
+        {
+          "description": "The HTTP error response format is not documented",
+          "isComplete": true
+        },
+        {
+          "description": "Possible `code` values in HTTP error responses are not documented"
+        },
+        {
+          "description": "[No rate limiting details are documented](https://www.guilded.gg/docs/api/http_rate_limits)",
+          "isComplete": true
+        },
+        {
+          "description": "Rate limit headers in 429 responses",
+          "issues": [
+            {
+              "description": "`Retry-After` ([inconsistent](https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/42ce6b45-fdae-4b47-ba2e-684166c3aae2/chat?messageId=aca70356-6592-47ce-b5ed-d674b3a3a569))",
+              "isComplete": true
+            },
+            { "description": "Bucket details" }
+          ]
+        },
+        {
+          "description": "Nullable and optional fields are not clearly distinguished from each other"
+        }
+      ]
     }
   ]
 }
