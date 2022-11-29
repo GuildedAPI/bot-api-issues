@@ -27,6 +27,18 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Guilded Bot API Issues</title>
+    <script>
+      // https://tailwindcss.com/docs/dark-mode
+      if (
+        localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
   </head>
   <body
     class="bg-guilded-white dark:bg-guilded-gray dark:text-guilded-white py-8 px-5"

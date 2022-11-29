@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
 import { Link } from './components/Link';
 import { Markdown } from './components/Markdown';
@@ -24,6 +24,12 @@ const Index: React.FC = () => {
   );
 
   const [hideComplete, setHideComplete] = useState(false);
+  const [theme, setTheme] = useState('');
+
+  // Set initial value from localStorage
+  useEffect(() => {
+    setTheme(localStorage.getItem('theme') ?? '');
+  }, []);
 
   return (
     <div className='mx-auto max-w-2xl'>
@@ -50,6 +56,48 @@ const Index: React.FC = () => {
           >
             {hideComplete ? 'Show' : 'Hide'} complete issues
           </button>
+          <span>•</span>
+          <select
+            className='bg-transparent text-blue-400 dark:text-guilded-link hover:text-blue-600 dark:hover:text-guilded-white transition'
+            value={theme}
+            onChange={(e) => {
+              const v = e.target.selectedOptions[0].value;
+              if (v === '') {
+                localStorage.removeItem('theme');
+              } else {
+                localStorage.setItem('theme', v);
+              }
+              if (
+                (!v &&
+                  window.matchMedia('(prefers-color-scheme: dark)').matches) ||
+                v === 'dark'
+              ) {
+                document.documentElement.classList.add('dark');
+              } else {
+                document.documentElement.classList.remove('dark');
+              }
+              setTheme(v);
+            }}
+          >
+            <option
+              className='bg-guilded-white dark:text-guilded-black'
+              value=''
+            >
+              System theme
+            </option>
+            <option
+              className='bg-guilded-white dark:text-guilded-black'
+              value='light'
+            >
+              Light
+            </option>
+            <option
+              className='bg-guilded-white dark:text-guilded-black'
+              value='dark'
+            >
+              Dark
+            </option>
+          </select>
         </p>
       </div>
       {isLoading || !data ? (
