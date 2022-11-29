@@ -45,7 +45,7 @@ const Index: React.FC = () => {
           </Link>
           <span>•</span>
           <button
-            className='text-guilded-link hover:text-guilded-white transition'
+            className='text-blue-400 dark:text-guilded-link hover:text-blue-600 dark:hover:text-guilded-white transition'
             onClick={() => setHideComplete(!hideComplete)}
           >
             {hideComplete ? 'Show' : 'Hide'} complete issues
@@ -73,12 +73,12 @@ const Index: React.FC = () => {
               <details
                 key={section.title}
                 id={section.title.toLowerCase().replace(/ /g, '-')}
-                className='rounded-lg bg-guilded-slate py-4 px-6 shadow-lg'
+                className='rounded-lg bg-guilded-slate/10 dark:bg-guilded-slate py-4 px-6 shadow-lg'
               >
                 <summary className='font-bold text-2xl cursor-pointer flex'>
                   <span>{section.title}</span>
                   <span title='Completed / Total' className='ml-auto'>
-                    <span className='text-guilded-gilded'>
+                    <span className='text-blue-400 dark:text-guilded-gilded'>
                       {flattened.filter((i) => i.isComplete).length}
                     </span>
                     <span className='dark:text-guilded-subtitle'>
@@ -86,7 +86,7 @@ const Index: React.FC = () => {
                     </span>
                   </span>
                 </summary>
-                <p className='text-guilded-subtitle'>
+                <p className='dark:text-guilded-subtitle'>
                   <Markdown>{section.description}</Markdown>
                 </p>
                 {section.items &&
@@ -172,8 +172,8 @@ const Issues: React.FC<{ issues: Issue[]; hideComplete?: boolean }> = ({
                 <div
                   className={`rounded-full mt-1 w-4 min-w-[1rem] h-4 ${
                     issue.isComplete
-                      ? 'bg-guilded-gilded'
-                      : 'border-2 border-guilded-gilded/70'
+                      ? 'bg-blue-500 dark:bg-guilded-gilded'
+                      : 'border-2 border-blue-500/70 dark:border-guilded-gilded/70'
                   }`}
                 />
               </a>
