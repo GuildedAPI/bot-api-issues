@@ -46,20 +46,12 @@ const Index: React.FC = () => {
       ) : (
         <div className='space-y-2'>
           {data.sections.map((section) => {
-            const flattened: Issue[] = [];
-            const addIssues = (issues: Issue[]) => {
-              for (const issue of issues) {
-                flattened.push(issue);
-                if (issue.issues) addIssues(issue.issues);
-              }
-            };
-
+            const flattened = [];
             for (const items of Object.values(section.items)) {
               for (const item of items) {
-                addIssues(item.issues);
+                flattened.push(...getAllChildrenIssues(item.issues));
               }
             }
-
             return (
               <details
                 key={section.title}
@@ -152,4 +144,17 @@ const Issues: React.FC<{ issues: Issue[] }> = ({ issues }) => {
       ))}
     </ul>
   );
+};
+
+const getAllChildrenIssues = (issues: Issue[]) => {
+  const flattened: Issue[] = [];
+  const addIssues = (issues: Issue[]) => {
+    for (const issue of issues) {
+      flattened.push(issue);
+      if (issue.issues) addIssues(issue.issues);
+    }
+  };
+
+  addIssues(issues);
+  return flattened;
 };
