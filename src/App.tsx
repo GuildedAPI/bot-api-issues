@@ -137,19 +137,21 @@ const Issues: React.FC<{ issues: Issue[]; hideComplete?: boolean }> = ({
         if (
           hideComplete &&
           issue.isComplete &&
-          !getAllChildrenIssues(issue.issues ?? []).filter((i) => !i.isComplete)
-            .length
+          (!issue.issues ||
+            !getAllChildrenIssues(issue.issues).filter((i) => !i.isComplete)
+              .length)
         ) {
           return undefined;
         }
         return (
           <>
             <li key={`issue-${index}/${issues.length}`} className='flex'>
-              <input
-                type='checkbox'
-                defaultChecked={issue.isComplete}
-                className='mr-2 mb-auto mt-1'
-                disabled
+              <div
+                className={`rounded-full w-4 min-w-[1rem] h-4 ${
+                  issue.isComplete
+                    ? 'bg-guilded-gilded'
+                    : 'border-2 border-guilded-gilded/70'
+                } mr-2 mt-1`}
               />
               <Markdown>{issue.description}</Markdown>
               {issue.references && (
