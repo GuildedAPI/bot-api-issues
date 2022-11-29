@@ -125,7 +125,7 @@ const Issues: React.FC<{ issues: Issue[] }> = ({ issues }) => {
             <input
               type='checkbox'
               defaultChecked={issue.isComplete}
-              className='mr-2'
+              className='mr-2 mb-auto mt-1'
               disabled
             />
             <Markdown>{issue.description}</Markdown>
