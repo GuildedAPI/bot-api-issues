@@ -736,6 +736,78 @@
               }
             ]
           }
+        ],
+        "http_methods": [
+          {
+            "operationId": "",
+            "operationSummary": "API Responses",
+            "issues": [
+              {
+                "description": "`meta.missingPermissions` contains UI labels instead of more-useful bitfields",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/d12ab62a-4bd1-4698-a435-7b0026cde299/announcements/bR9mZo5R?replyId=135069530"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "": [
+          {
+            "operationId": "",
+            "operationSummary": "OAuth2",
+            "issues": [
+              {
+                "description": "Implementation ([see also](https://authlink.guildedapi.com))"
+              },
+              {
+                "description": "Get Current User Servers endpoint",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=64c5045b-734f-4e28-a146-6a604b14a3c5"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "operationId": "",
+            "operationSummary": "Bots",
+            "issues": [
+              {
+                "description": "Slash commands & other bot-specific features",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=2628e908-3989-4c83-ba36-e9134ab821b7"
+                  },
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=3f10aa66-16cc-4126-817a-1ecfac68143c"
+                  },
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=cf5123e8-39ca-4f31-948e-9a6617bc1b59"
+                  }
+                ]
+              },
+              {
+                "description": "Vanity invite URLs",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=ad5b53d9-726f-4846-888e-1eeaa8e7d515"
+                  }
+                ]
+              },
+              {
+                "description": "Ability to un-publish ([thread](https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/ef3fdb66-444a-4986-9a0c-b6d518b0282b/chat))",
+                "references": [
+                  {
+                    "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=988428a6-c47a-48df-96e8-88174741632a"
+                  }
+                ],
+                "isComplete": true
+              }
+            ]
+          }
         ]
       }
     }
