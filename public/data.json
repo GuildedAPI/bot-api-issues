@@ -382,7 +382,23 @@
               },
               {
                 "description": "Get Server Channel endpoint",
-                "isComplete": true
+                "isComplete": true,
+                "issues": [
+                  {
+                    "description": "Lower permission requirement from Manage channels to Read x/View x",
+                    "references": [
+                      {
+                        "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/6eaf00c6-62eb-44f2-aa12-bf490f4a5fce/chat?messageId=bb94bfbd-0ca7-4f0e-8847-d598ab12a20b"
+                      },
+                      {
+                        "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/42ce6b45-fdae-4b47-ba2e-684166c3aae2/chat?messageId=fd5d591d-822d-4130-8343-4b91348d174a"
+                      },
+                      {
+                        "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/491b87d5-10b3-4d90-b100-1d0182ed840c/chat?messageId=a2629ae4-53a5-49d2-9a7e-384cddf1f7a0"
+                      }
+                    ]
+                  }
+                ]
               },
               {
                 "description": "Create Server Channel endpoint",
