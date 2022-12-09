@@ -257,6 +257,10 @@
                 "isComplete": true
               },
               {
+                "description": "[Server Create gateway event](https://www.guilded.gg/docs/api/websockets/BotServerMembershipCreated)",
+                "isComplete": true
+              },
+              {
                 "description": "Server Update gateway event",
                 "references": [
                   {
@@ -264,7 +268,10 @@
                   }
                 ]
               },
-              { "description": "Server Delete gateway event" },
+              {
+                "description": "[Server Delete gateway event](https://www.guilded.gg/docs/api/websockets/BotServerMembershipDeleted)",
+                "isComplete": true
+              },
               {
                 "description": "Create Audit Log Event endpoint",
                 "references": [
