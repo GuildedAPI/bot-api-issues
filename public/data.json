@@ -59,6 +59,17 @@
             ]
           }
         ],
+        "channels": [
+          {
+            "operationSummary": "Update a channel",
+            "operationId": "ChannelUpdate",
+            "issues": [
+              {
+                "description": "It is not possible to make a channel not explicitly public using only `visibility`"
+              }
+            ]
+          }
+        ],
         "forums": [
           {
             "operationSummary": "Create a thread in a forum",
