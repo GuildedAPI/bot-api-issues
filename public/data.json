@@ -13,7 +13,7 @@
                 "description": "Sometimes raises a 500 if you pass certain markdown strings to `content`",
                 "issues": [
                   {
-                    "description": "`***`",
+                    "description": "`* * *`",
                     "references": [
                       {
                         "url": "https://www.guilded.gg/API-Official/groups/53NVy4j3/channels/42ce6b45-fdae-4b47-ba2e-684166c3aae2/chat?messageId=272c6b5c-740a-4487-bd73-54e07132c1c3"
